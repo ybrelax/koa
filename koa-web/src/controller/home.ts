@@ -6,6 +6,9 @@ export default {
     },
     login: async (ctx, next) => {
         let data = await  HomeService.login(ctx.request.body);
-        ctx.response.body = data;
+        ctx.send({
+            status: '200',
+            data
+        })
     }
 }
